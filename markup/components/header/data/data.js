@@ -22,17 +22,15 @@ header: {
             },
         ],
         mainHeader: {
-            listItems: [
+            pageList: [
                 {
                     text: 'Продажа',
                 },
                 {
                     text: 'Аренда',
                 },
-                {
-                    icon: 'fire',
-                    text: 'Спецпредложения',
-                },
+            ],
+            estateType: [
                 {
                     text: 'Новостройки',
                 },

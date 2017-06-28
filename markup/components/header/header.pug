@@ -1,24 +1,38 @@
 mixin header(data)
-    header.header
-        .header__top
-            ul.list.header__list--left.list--inline-items.list--inline.list--lstn
-                each listLeftItem in data.listLeft
-                    li.header-list__item: a(href='#').link.link--little= listLeftItem
+  header.header
+    .header__top
+      ul.list.header__list--left.list--inline-items.list--inline.list--lstn
+        each listLeftItem in data.listLeft
+          li.header-list__item: a(href='#').link.link--little: span= listLeftItem
 
-            ul.list.header__list--right.list--inline-items.list--inline.list--lstn
-                each listRightItem in data.listRight
-                    li.header-list__item
-                        != pugHelpers.Icon.call(locals, {iconName: listRightItem.iconName})
-                        a(href='#').link.link--little= listRightItem.text
-        .header__bottom
-            !=pugHelpers.Icon.call(locals, {iconName: 'GED-Logo', className: 'header__logo'})
-            ul.header__list
-                each listItem in data.mainHeader.listItems
-                    li.header-list__item
-                        a(href='#')= listItem.text
-            .header__ads
-                .ads
-                    h4 Квартиры в подмосковье
-                    span от
-                    span.price 1,8
-                    span млн. руб
+      ul.list.header__list--right.list--inline-items.list--inline.list--lstn
+        each listRightItem in data.listRight
+          li.header-list__item.header-list__item--hover
+            != pugHelpers.Icon.call(locals, {iconName: listRightItem.iconName})
+            a(href='#').link.link--little: span= listRightItem.text
+    .header__bottom
+      a(href='/')
+        !=pugHelpers.Icon.call(locals, {iconName: 'GED-Logo', className: 'header__logo'})
+
+      ul.list.list--inline-items.list--inline.list--lstn.header__list
+        each listItem in data.mainHeader.pageList
+          li.header-list__item
+            a(href='#').link.link--menu.link--bottom-dotted.link--bold= listItem.text
+
+      a(href='#').link.link--menu.link--bold.header__special
+        !=pugHelpers.Icon.call(locals, {iconName: 'fire', className: 'header__fire'})
+        span Спецпредложения
+
+      ul.list.list--inline-items.list--inline.list--lstn.header__list
+        each listItem in data.mainHeader.estateType
+          li.header-list__item.header-list__item--hover-yellow
+            a(href='#').link.link--menu.link--bold= listItem.text
+      !=pugHelpers.Icon.call(locals, {iconName: 'Absolut-Logo', className: 'header__absolut'})
+
+
+
+      .header__ads.ads
+          span.ads__header Квартиры в подмосковье
+          span.ads__from от
+          span.ads__price 1,8
+          span.ads__cost млн руб.

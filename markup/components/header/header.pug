@@ -1,15 +1,15 @@
 mixin header(data)
     header.header
         .header__top
-            ul.header__list--left.list--inline.list--lstn
+            ul.list.header__list--left.list--inline-items.list--inline.list--lstn
                 each listLeftItem in data.listLeft
-                    li.header-list__item: a.link--little(href='#')= listLeftItem
+                    li.header-list__item: a(href='#').link.link--little= listLeftItem
 
-            ul.header__list--right.list--inline.list--lstn
+            ul.list.header__list--right.list--inline-items.list--inline.list--lstn
                 each listRightItem in data.listRight
                     li.header-list__item
                         != pugHelpers.Icon.call(locals, {iconName: listRightItem.iconName})
-                        a(href='#').link--little= listRightItem.text
+                        a(href='#').link.link--little= listRightItem.text
         .header__bottom
             !=pugHelpers.Icon.call(locals, {iconName: 'GED-Logo', className: 'header__logo'})
             ul.header__list

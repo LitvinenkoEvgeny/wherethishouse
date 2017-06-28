@@ -23,6 +23,7 @@ html, body {
 }
 
 .link{
+    text-decoration: none;
     &--little{
         color: @light-grey-color;
         font-size: @font-size;
@@ -34,7 +35,12 @@ html, body {
 }
 
 .list {
+    margin: 0;
+    padding: 0;
     &--inline{
+        display: inline-block;
+    }
+    &--inline-items{
         li {
             display: inline-block;
         }

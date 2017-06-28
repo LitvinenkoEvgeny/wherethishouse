@@ -1,0 +1,45 @@
+// Common styles of the project
+@import "vars.less";
+
+html, body {
+    height: 100%;
+}
+
+.page {
+    // Стили для body
+}
+
+.page__wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+* html .page__wrapper {
+    height: 100%;
+}
+
+.page__buffer {
+    height: 50px;
+}
+
+.link{
+    &--little{
+        color: @light-grey-color;
+        font-size: @font-size;
+        transition: color .3s ease-in-out;
+        &:hover {
+            color: @hover-color;
+        }
+    }
+}
+
+.list {
+    &--inline{
+        li {
+            display: inline-block;
+        }
+    }
+    &--lstn{
+        list-style-type: none;
+    }
+}

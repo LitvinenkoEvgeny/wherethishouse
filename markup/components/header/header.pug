@@ -1,0 +1,24 @@
+mixin header(data)
+    header.header
+        .header__top
+            ul.header__list--left.list--inline.list--lstn
+                each listLeftItem in data.listLeft
+                    li.header-list__item: a.link--little(href='#')= listLeftItem
+
+            ul.header__list--right.list--inline.list--lstn
+                each listRightItem in data.listRight
+                    li.header-list__item
+                        != pugHelpers.Icon.call(locals, {iconName: listRightItem.iconName})
+                        a(href='#').link--little= listRightItem.text
+        .header__bottom
+            !=pugHelpers.Icon.call(locals, {iconName: 'GED-Logo', className: 'header__logo'})
+            ul.header__list
+                each listItem in data.mainHeader.listItems
+                    li.header-list__item
+                        a(href='#')= listItem.text
+            .header__ads
+                .ads
+                    h4 Квартиры в подмосковье
+                    span от
+                    span.price 1,8
+                    span млн. руб
